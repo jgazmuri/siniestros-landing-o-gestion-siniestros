@@ -680,67 +680,14 @@
     errorEl.style.display = 'none';
     enviarConsulta(nombre, comuna, caso, servicio);
   });
-
-  document.getElementById('chat-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var nombre = document.getElementById('chat-nombre').value.trim();
-    var comuna = document.getElementById('chat-comuna').value.trim();
-    var caso = document.getElementById('chat-caso').value.trim();
-    var errorEl = document.getElementById('chat-error');
-    if(!nombre || !caso){ errorEl.style.display = 'block'; return; }
-    errorEl.style.display = 'none';
-    enviarConsulta(nombre, comuna, caso, "");
-  });
-
-  var launcher = document.getElementById('chat-launcher');
-  var panel = document.getElementById('chat-panel');
-  launcher.addEventListener('click', function(){
-    panel.classList.toggle('open');
-  });
-  document.getElementById('chat-close').addEventListener('click', function(){
-    panel.classList.remove('open');
-  });
 </script>
 
-<button class="chat-launcher" id="chat-launcher" aria-label="Abrir chat de consulta">
+<a class="chat-launcher" href="https://wa.me/56966559576?text=Hola%2C%20quisiera%20consultar%20por%20mi%20siniestro" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4 4h16v12H7l-3 3V4z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" fill="none"/>
   </svg>
   <span class="chat-badge"></span>
-</button>
-
-<div class="chat-panel" id="chat-panel">
-  <div class="chat-head">
-    <div class="avatar">GS</div>
-    <div class="who">
-      <div class="name">Gestión de Siniestros</div>
-      <div class="status">Responde por WhatsApp</div>
-    </div>
-    <button class="chat-close" id="chat-close" aria-label="Cerrar chat">✕</button>
-  </div>
-  <div class="chat-body">
-    <div class="chat-bubble">
-      👋 Hola, cuéntame brevemente qué pasó con tu vehículo y te contacto directo por WhatsApp. Primera consulta sin costo.
-    </div>
-    <form id="chat-form">
-      <div class="form-group">
-        <label for="chat-nombre">Nombre</label>
-        <input type="text" id="chat-nombre" placeholder="Su nombre" required>
-      </div>
-      <div class="form-group">
-        <label for="chat-comuna">Comuna</label>
-        <input type="text" id="chat-comuna" placeholder="Ej: Concón...">
-      </div>
-      <div class="form-group">
-        <label for="chat-caso">Su consulta</label>
-        <textarea id="chat-caso" placeholder="Cuéntame brevemente qué pasó..." required></textarea>
-      </div>
-      <button type="submit" class="btn-submit">Enviar →</button>
-      <p class="form-error" id="chat-error">Complete su nombre y consulta.</p>
-    </form>
-    <p class="form-note">Consulta gratuita, sin registro. No se almacena su información.</p>
-  </div>
-</div>
+</a>
 
 <footer>
   Gestión Integral de Siniestros Vehiculares · Cobertura: Concón, Viña del Mar, Valparaíso, Quilpué, Villa Alemana<br>
