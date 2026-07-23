@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Gestión Integral de Siniestros Vehiculares</title>
 <meta name="description" content="Ingeniero automotriz con más de 15 años en seguros. Negocio con la aseguradora, superviso talleres y te entrego el auto reparado en casa. Concón, Viña del Mar, Valparaíso, Quilpué, Villa Alemana.">
 <meta name="keywords" content="asesoría siniestros, liquidación de seguros, revisión técnica, taller de seguros, inspección precompra, Concón, Viña del Mar, Valparaíso, ingeniero automotriz">
@@ -364,7 +364,8 @@
   /* FLOATING CHAT WIDGET */
   .chat-launcher{
     position:fixed;
-    bottom:24px;right:24px;
+    bottom:calc(24px + env(safe-area-inset-bottom));
+    right:calc(24px + env(safe-area-inset-right));
     width:60px;height:60px;
     border-radius:50%;
     background:var(--green);
@@ -372,12 +373,15 @@
     box-shadow:0 4px 18px rgba(0,0,0,0.25);
     cursor:pointer;
     display:flex;align-items:center;justify-content:center;
-    z-index:100;
+    z-index:9999;
     transition:transform 0.15s ease;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
   }
   .chat-launcher:hover{transform:scale(1.06);}
-  .chat-launcher svg{width:28px;height:28px;}
+  .chat-launcher svg{width:28px;height:28px;pointer-events:none;}
   .chat-badge{
+    pointer-events:none;
     position:absolute;top:-2px;right:-2px;
     width:14px;height:14px;border-radius:50%;
     background:var(--stamp);
@@ -441,8 +445,8 @@
   .chat-panel .form-note{font-size:10.5px;margin-top:10px;}
 
   @media(max-width:480px){
-    .chat-panel{right:16px;bottom:88px;}
-    .chat-launcher{right:16px;bottom:16px;}
+    .chat-panel{right:16px;bottom:calc(88px + env(safe-area-inset-bottom));}
+    .chat-launcher{right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));}
   }
 
   footer{
