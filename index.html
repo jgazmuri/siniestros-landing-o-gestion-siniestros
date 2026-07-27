@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -361,6 +362,32 @@
     color:#f5a3a3;font-size:13px;margin-top:8px;display:none;
   }
 
+  /* APORTE VOLUNTARIO */
+  .support{
+    background:var(--paper);
+    padding:56px 0;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .support .box{
+    max-width:520px;margin:0 auto;
+    border:1px dashed var(--line);
+    border-radius:10px;
+    padding:32px 28px;
+    background:var(--paper-2);
+  }
+  .support .box h3{font-size:18px;color:var(--ink);margin-bottom:10px;}
+  .support .box p{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.6;}
+  .btn-support{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;color:var(--steel);
+    border:1.5px solid var(--steel);
+    padding:12px 24px;border-radius:6px;
+    font-size:14px;font-weight:500;
+    text-decoration:none;
+  }
+  .btn-support:hover{background:var(--steel);color:#fff;}
+
   /* FLOATING CHAT WIDGET */
   .chat-launcher{
     position:fixed;
@@ -655,6 +682,16 @@
         es un primer acercamiento para entender su caso antes de conversar directamente por WhatsApp.
         No comparto ni almaceno su información; el mensaje se envía directo a mi número personal.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <div class="wrap">
+    <div class="box">
+      <h3>Las consultas por WhatsApp son gratis, sin límite</h3>
+      <p>No cobro por responder tus preguntas sobre tu siniestro. Si sientes que la orientación te sirvió y quieres dejar un aporte voluntario, puedes hacerlo aquí — es completamente opcional.</p>
+      <a class="btn-support" href="https://link.mercadopago.cl/siniestrosvehiculare" target="_blank" rel="noopener">Dejar un aporte voluntario →</a>
     </div>
   </div>
 </section>
